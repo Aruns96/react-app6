@@ -1,6 +1,11 @@
-import React from 'react'
-import { Card,Button } from 'react-bootstrap'
+import React,{useContext} from 'react';
+import { Card,Button } from 'react-bootstrap';
+import { CartContext } from '../store/CartProvider';
 const EachItem = (props) => {
+    const { addItemToCart } = useContext(CartContext);
+    const handleClick = () => {
+        addItemToCart(props.product);
+      };
   return (
 
         <Card style={{ width: "18rem" }}>
@@ -10,9 +15,9 @@ const EachItem = (props) => {
         <Card.Text>
             {props.price}
         </Card.Text>
-        <Button variant="primary">Add to cart</Button>
+        <Button onClick={handleClick} variant="primary">Add to cart</Button>
         </Card.Body>
-    </Card>
+        </Card>
   
   )
 }

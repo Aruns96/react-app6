@@ -1,7 +1,9 @@
-import React from 'react';
+import React ,{useContext}from 'react';
 import { Navbar,Nav,Container,Button } from 'react-bootstrap';
+import { CartContext } from '../store/CartProvider';
 
 const Header = (props) => {
+    const { cartItems} = useContext(CartContext);
   return (
    <header>
     <Navbar sticky="top" bg="dark" data-bs-theme="dark">
@@ -12,7 +14,7 @@ const Header = (props) => {
             <Nav.Link href="#features">Store</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
           </Nav>
-          <Button onClick={()=>{props.onShow()}}  variant="dark">Cart:-<span>3</span></Button>
+          <Button onClick={()=>{props.onShow()}}  variant="dark">Cart:-<span>{cartItems.length}</span></Button>
         </Container>
       </Navbar>
  

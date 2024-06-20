@@ -4,7 +4,7 @@ import { Container,Row,Col } from 'react-bootstrap';
 const productsArr = [
 
     {
-    
+    id:1,
     title: 'Colors',
     
     price: 100,
@@ -14,7 +14,7 @@ const productsArr = [
     },
     
     {
-    
+    id:2,
     title: 'Black and white Colors',
     
     price: 50,
@@ -24,7 +24,7 @@ const productsArr = [
     },
     
     {
-    
+    id:3,
     title: 'Yellow and Black Colors',
     
     price: 70,
@@ -34,7 +34,7 @@ const productsArr = [
     },
     
     {
-    
+    id:4,
     title: 'Blue Color',
     
     price: 100,
@@ -51,7 +51,7 @@ const Item = (props) => {
         
     <Container>
       <Row className='g-2'>
-        {productsArr.map(i=><Col xs={6} className='p-3'><EachItem title={i.title} price={i.price} imageUrl={i.imageUrl}/></Col>)}
+        {productsArr.map(i=><Col key={i.title} xs={6} className='p-3'><EachItem  product={i} title={i.title} price={i.price} imageUrl={i.imageUrl}/></Col>)}
         
       </Row>
     </Container>
