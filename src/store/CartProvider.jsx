@@ -5,11 +5,12 @@ const CartContext = createContext({
   addItemToCart: () => {},
   calculateTotalPrice: () => 0,
   removeItemFromCart: () => {},
+ 
 });
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-
+  
   const addItemToCart = (item) => {
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {

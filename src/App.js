@@ -1,29 +1,35 @@
 
-import { useState } from 'react';
+
 import './App.css';
-import Button from "./components/Button"
-import Cart from './components/Cart';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Item from './components/Item';
+
 import {CartProvider} from './store/CartProvider';
+import { RouterProvider,createBrowserRouter } from 'react-router-dom';
+import Root from './pages/Root';
+import About from './pages/About';
+import Home from './pages/Home';
+import Store from './pages/Store';
+
+const router = createBrowserRouter([
+  {path:"/",element:<Root />
+    ,children:[
+      {path:"/home",element:<Home />},
+      {path:"/store",element:<Store />},
+      {path:"/about",element:<About />}
+    ]
+  }
+])
 
 function App() {
-  const [showCart,setShowCart]=useState(false);
-  const showClickHandler=()=>{
-    setShowCart(true)
-  }
-  const hideCartHandler=()=>{
-    setShowCart(false)
-  }
+
   return (
     <CartProvider>
-   <Header onShow={showClickHandler}/>
+   {/* <Header onShow={showClickHandler}/>
    <Item section="MUSIC"/>
    <Item section="MERCH"/>
    {showCart&&<Cart onClose={hideCartHandler}/>}
    <Button />
-   <Footer />
+   <Footer /> */}
+   <RouterProvider router={router}/>
    </CartProvider>
   );
 }

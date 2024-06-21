@@ -1,5 +1,5 @@
 import React ,{useContext}from 'react'
-import { Container,Row,Col } from 'react-bootstrap';
+import { Container,Row,Col,Button,Offcanvas } from 'react-bootstrap';
 import { CartContext } from '../store/CartProvider';
 
 
@@ -8,10 +8,23 @@ import { CartContext } from '../store/CartProvider';
 const Cart = (props) => {
     const { cartItems, removeItemFromCart ,calculateTotalPrice} = useContext(CartContext);
   return (
-        <div className='position-absolute top-0 end-0 bg-primary-subtle p-3 mt-5 overflow-auto'>
+       <>
+       <Button variant="dark" className="position-relative" onClick={props.setShow}>
+       <i className="bi bi-cart"></i>
+       
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {cartItems.length}
+          <span className="visually-hidden">unread messages</span>
+        </span>
+      </Button>
+      <Offcanvas show={props.show} onHide={props.setShow} placement='end'>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Cart:</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+        
         <Container >
-            <h2>cart</h2>
-            <button onClick={()=>{props.onClose()}}>X</button>
+           
             <Row>
                 <Col>Item</Col>
                 <Col>price</Col>
@@ -27,8 +40,11 @@ const Cart = (props) => {
             </div>
             <button>purchase</button>
             </Container>
-            </div>
-    
+           
+        </Offcanvas.Body>
+      </Offcanvas>
+       
+            </>
   )
 }
 
