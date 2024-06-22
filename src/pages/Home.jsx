@@ -1,9 +1,10 @@
 import React from 'react'
+import Tour from '../components/Tour'
 
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <Tour />
   )
 }
 

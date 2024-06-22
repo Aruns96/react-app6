@@ -4,12 +4,14 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 const About = () => {
     return (
         <Container>
+            <h2 className='display-6 text-center fw-semibold'>About</h2>
           <Row>
             <Col xs={6} md={4}>
               <Image
                 src="https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png"
                 fluid
                 roundedCircle
+               
               />
             </Col>
             <Col>
