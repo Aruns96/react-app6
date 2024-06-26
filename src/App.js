@@ -8,13 +8,15 @@ import Root from './pages/Root';
 import About from './pages/About';
 import Home from './pages/Home';
 import Store from './pages/Store';
+import Contact from './pages/Contact';
 
 const router = createBrowserRouter([
   {path:"/",element:<Root />
     ,children:[
       {path:"/home",element:<Home />},
       {path:"/store",element:<Store />},
-      {path:"/about",element:<About />}
+      {path:"/about",element:<About />},
+      {path:"/contact",element:<Contact />}
     ]
   }
 ])
@@ -23,12 +25,7 @@ function App() {
 
   return (
     <CartProvider>
-   {/* <Header onShow={showClickHandler}/>
-   <Item section="MUSIC"/>
-   <Item section="MERCH"/>
-   {showCart&&<Cart onClose={hideCartHandler}/>}
-   <Button />
-   <Footer /> */}
+   
    <RouterProvider router={router}/>
    </CartProvider>
   );
