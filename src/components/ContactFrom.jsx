@@ -37,7 +37,7 @@ const ContactFrom = () => {
       <Container className="w-50">
         <Row>
           <Col>
-            {" "}
+            
             <FloatingLabel
               label="Name"
               className="mb-3"
@@ -48,7 +48,7 @@ const ContactFrom = () => {
         </Row>
         <Row>
           <Col>
-            {" "}
+            
             <FloatingLabel
               label="Email address"
               className="mb-3"

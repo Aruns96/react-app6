@@ -15,10 +15,10 @@ const MainNavigation = (props) => {
           <Container>
             
             <Nav className="navbar navbar-dark bg-dark"  >
-              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='./home'>Home</NavLink>
-              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='./store'>Store</NavLink>
-              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='./about'>About</NavLink>
-              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='./contact'>Contact Us</NavLink>
+              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/home'>Home</NavLink>
+              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/store'>Store</NavLink>
+              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/about'>About</NavLink>
+              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/contact'>Contact Us</NavLink>
             </Nav>
             <Cart setShow={showHandler} show={show}/>
             {/* <Button onClick={()=>{props.onShow()}}  variant="dark">Cart:-<span>{cartItems.length}</span></Button> */}

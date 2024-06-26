@@ -1,8 +1,12 @@
 import React from 'react'
 import { Container, Row, Col, Image } from "react-bootstrap";
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const About = () => {
     return (
+        <>
+        <Header />
         <Container>
             <h2 className='display-6 text-center fw-semibold'>About</h2>
           <Row>
@@ -49,6 +53,8 @@ const About = () => {
             </Col>
           </Row>
         </Container>
+        <Footer />
+        </>
       );
 }
 
