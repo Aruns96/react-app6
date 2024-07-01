@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 
 const Store = () => {
     
+    
   return (
     <>
     <Header />

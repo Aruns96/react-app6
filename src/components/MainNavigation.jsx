@@ -9,6 +9,14 @@ const MainNavigation = (props) => {
     const showHandler=()=>{
       setshow(prev=>!prev)
     }
+    const isLogin = localStorage.getItem("token");
+    console.log("login",isLogin)
+    let url;
+    if(isLogin===null){
+      url="/login"
+    }else{
+        url="/store"
+    }
     return (
      <header>
       <Navbar sticky="top" className='bg-dark' variant="dark">
@@ -16,7 +24,7 @@ const MainNavigation = (props) => {
             
             <Nav className="navbar navbar-dark bg-dark"  >
               <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/home'>Home</NavLink>
-              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/store'>Store</NavLink>
+              <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to={url}>Store</NavLink>
               <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/about'>About</NavLink>
               <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/login'>Login</NavLink>
               <NavLink className="me-3" style={({isActive})=>isActive?{color:"white"}:{color:"gray"}} to='/contact'>Contact Us</NavLink>
