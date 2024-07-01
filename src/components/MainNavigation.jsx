@@ -10,7 +10,7 @@ const MainNavigation = (props) => {
       setshow(prev=>!prev)
     }
     const isLogin = localStorage.getItem("token");
-    console.log("login",isLogin)
+    //console.log("login",isLogin)
     let url;
     if(isLogin===null){
       url="/login"

@@ -53,6 +53,7 @@ const Login = () => {
       }).then(data=>{
        // console.log("token",data)
         authCtx.login(data.idToken)
+        localStorage.setItem("email",enteredEmail)
          history.replace("/store")
       })
       .catch(e=> alert(e.message))

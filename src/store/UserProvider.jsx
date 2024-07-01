@@ -2,7 +2,7 @@ import React,{createContext,useState} from 'react';
 
 const UserContext = createContext({
      token:"",
-    
+     email:"",
      login:(token)=>{},
      logout:()=>{}
 });
@@ -12,6 +12,8 @@ const UserProvider = ({children}) => {
   const initialToken = localStorage.getItem("token");
 
   const [token,setToken] = useState(initialToken)
+
+  
 
   const loginHandler=(token)=>{
    
