@@ -1,14 +1,15 @@
 
 
 import './App.css';
-
+import { UserProvider } from './store/UserProvider';
 import {CartProvider} from './store/CartProvider';
-import { Route,Switch } from 'react-router-dom';
+import { Route,Switch,Redirect } from 'react-router-dom';
 
 import About from './pages/About';
 import Home from './pages/Home';
 import Store from './pages/Store';
 import Contact from './pages/Contact';
+import Login from './pages/Login'
 import ProductDetails from './pages/ProductDetails';
 
 
@@ -17,10 +18,11 @@ import ProductDetails from './pages/ProductDetails';
 function App() {
 
   return (
+    <UserProvider>
     <CartProvider>
       <Switch>
       <Route path="/" exact>
-        <Home />
+        <Redirect to="/home" />
       </Route>
       <Route path="/home">
         <Home />
@@ -34,12 +36,16 @@ function App() {
       <Route path="/contact">
       <Contact />
       </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
       <Route path="/store/:productId">
       <ProductDetails />
       </Route>
       </Switch>
    
    </CartProvider>
+   </UserProvider>
   );
 }
 
